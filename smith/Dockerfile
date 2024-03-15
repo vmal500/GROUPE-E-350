@@ -12,6 +12,9 @@ RUN useradd --create-home --shell /bin/bash smith && \
 # Copie du script de démarrage dans le conteneur
 COPY ./smith.sh /smith.sh
 
+# Copier la configuration rsyslog à l'emplacement approprié avec le droit root
+COPY --chown=root:root ./rsyslog.conf /etc/rsyslog.conf
+
 # Donner les permissions d'exécution au script
 RUN chmod +x /smith.sh
 

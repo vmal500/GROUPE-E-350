@@ -6,6 +6,15 @@ service ssh start
 # Démarrage du service Apache2
 service apache2 start
 
+# Créer un fichier auth.log vide
+touch /var/log/auth.log
+
+# Définir le propriétaire et le groupe sur root
+chown root:root /var/log/auth.log
+
+# Définir les permissions appropriées
+chmod 644 /var/log/auth.log
+
 # Démarrage du service fail2ban
 service fail2ban start
 
