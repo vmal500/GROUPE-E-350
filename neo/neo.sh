@@ -1,7 +1,5 @@
 #!/bin/bash
 
-ufw allow 514
-
 # Démarrage de rsyslogd en arrière-plan
 rsyslogd &
 
